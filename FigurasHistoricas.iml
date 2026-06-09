@@ -17,6 +17,7 @@
       </library>
     </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="lib" level="application" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="postgresql-42.7.11" level="project" />
   </component>
 </module>
