@@ -8,6 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.List;
 
@@ -33,11 +34,11 @@ public class MainController {
     private void initialize() {
         System.out.println("FXML carregado com sucesso");
 
-        colId.setCellValueFactory(celula -> new javafx.beans.property.SimpleIntegerProperty(celula.getValue().getId()).asObject());
-        colNome.setCellValueFactory(celula -> new javafx.beans.property.SimpleStringProperty(celula.getValue().getNome()));
-        colAno.setCellValueFactory(celula -> new javafx.beans.property.SimpleIntegerProperty(celula.getValue().getAnoNascimento()).asObject());
-        colNacionalidade.setCellValueFactory(celula -> new javafx.beans.property.SimpleStringProperty(celula.getValue().getNacionalidade()));
-        colProfissao.setCellValueFactory(celula -> new javafx.beans.property.SimpleStringProperty(celula.getValue().getProfissao()));
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colAno.setCellValueFactory(new PropertyValueFactory<>("anoNascimento"));
+        colNacionalidade.setCellValueFactory(new PropertyValueFactory<>("nacionalidade"));
+        colProfissao.setCellValueFactory(new PropertyValueFactory<>("profissao"));
 
         tblFiguraHistorica.setItems(obsFiguras);
         atualizarTabela();
